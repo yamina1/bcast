@@ -1,0 +1,34 @@
+#!/usr/bin/env gnuplot
+  set title  'Bcast performances'
+  set xlabel 'data size(KB)'
+  set ylabel 'micro sec'
+  set logscal xy
+  set grid
+  #set key on outside center bmargin # top center box 
+  set key above
+  set key font "Verdana,20"
+  set xlabel font "Verdana,15"
+  set ylabel font "Verdana,15"
+  set xtics font "Verdana,15"
+  set ytics font "Verdana,15"
+#  set term enhanced font 'Verdana,10'
+  set pointsize 2
+  set noborder
+  #set yrange [0.001:1]
+  
+
+
+ plot 'file1.data'\
+ u 1:3 t '1proc' w lp,\
+'file3.data'\
+ u 1:3 t ' 3proc' w lp,\
+'file4.data'\
+ u 1:3 t '4proc' w lp
+
+
+#set terminal png
+#set output 'comp.png'
+
+set term postscript landscape enhanced color dashed "Helvetica" 20 linewidth 6
+set output "bcast.eps"
+replot
