@@ -22,7 +22,7 @@ call MPI_COMM_RANK(MPI_COMM_WORLD,rank,ierror)
 call MPI_COMM_SIZE(MPI_COMM_WORLD,numproc,ierror)
 
 
-print *,"Hello I am Processor ",rank," of ",numproc
+!!!print *,"Hello I am Processor ",rank," of ",numproc
 
 CALL getarg(1, arg)
 
